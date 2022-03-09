@@ -15,7 +15,7 @@
 
 # ＜実行：ターミナル＞
 # conda activate pythonstreamlit
-# streamlit run .\chap2_Introduction\08_execute_streamlit.py
+# streamlit run .\chap2_Introduction\1_execute_streamlit.py
 
 
 # ＜停止：ターミナル＞
