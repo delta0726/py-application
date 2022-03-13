@@ -16,7 +16,7 @@
 # - Edit Configurationから通常どおり実行
 # - ターミナルから以下のコードで実行
 # conda activate python-dash-plotly
-# python .\chap4_dash\3_dash_callback.py
+# python .\chap4_dash\3_dash_callback_basic.py
 
 
 # ＜目次＞
