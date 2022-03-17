@@ -1,7 +1,7 @@
 # ******************************************************************************
 # Book        : Pythonインタラクティブデータビジュアライゼーション入門
 # Chapter     : 1 Plotly Express
-# Theme       : Plotly Expressとは
+# Theme       : 1-2 Plotly Expressとは
 # Creat Date  : 2022/3/17
 # Final Update:
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
