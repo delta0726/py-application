@@ -4,6 +4,7 @@
 # Theme       : 2-2 スタイル設定
 # Creat Date  : 2022/3/19
 # Final Update:
+# Page        : P99 - P100
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
 # ******************************************************************************
 
