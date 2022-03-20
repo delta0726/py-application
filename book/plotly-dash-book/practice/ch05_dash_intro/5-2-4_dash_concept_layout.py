@@ -1,9 +1,9 @@
 # ******************************************************************************
 # Book        : Pythonインタラクティブデータビジュアライゼーション入門
 # Chapter     : 5 Dash入門
-# Theme       : 2-4 レイアウト
-# Creat Date  : 2022/3/19
-# Final Update:
+# Theme       : 2 Dashの全体像
+# Topic       : 4 レイアウト
+# Update Date : 2022/3/20
 # Page        : P101 - P102
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
 # ******************************************************************************

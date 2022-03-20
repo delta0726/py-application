@@ -1,9 +1,9 @@
 # ******************************************************************************
 # Book        : Pythonインタラクティブデータビジュアライゼーション入門
 # Chapter     : 5 Dash入門
-# Theme       : 2-1 コンポーネント
-# Creat Date  : 2022/3/19
-# Final Update:
+# Theme       : 2 Dashの全体像
+# Topic       : 1 コンポーネント
+# Update Date : 2022/3/20
 # Page        : P98 - P99
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
 # ******************************************************************************
