@@ -2,7 +2,7 @@
 # Book        : Pythonインタラクティブデータビジュアライゼーション入門
 # Chapter     : 7 Dashコールバック
 # Theme       : 2 パターンマッチング・コールバック
-# Topic       : 1 ALLセレクタ
+# Topic       : 1 ALLセレクタ（基礎編）
 # Update Date : 2022/3/26
 # Page        : P128 - P132
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
@@ -66,7 +66,7 @@ app.layout = html.Div(
 # ＜ポイント＞
 # - Stateを設定することでボタンを押下した状態を検知している
 # - ドロップダウンのidは辞書のindexキーにn_clicksが値として格納されて固有化されている
-# - ドロップダウンの更新を検知してindexキーを全て(ALL)取得してリスト表示しる
+# - ドロップダウンの更新を検知してindexキーを全て(ALL)取得してリスト表示する
 
 # デバッグ用
 # n_clicks = 1
