@@ -52,9 +52,9 @@ app = dash.Dash(__name__)
 # レイアウトの作成
 app.layout = html.Div(
     [
-        html.Button("PUSH ME", id="my_button"),  # 新たなレイアウトを追加するボタン
-        html.Div(id="my_div", children=[]),  # ドロップダウンを追加するDiv
-        html.Div(id="my_select"),  # 作成したグラフを描画するDiv
+        html.Button("PUSH ME", id="my_button"),
+        html.Div(id="my_div", children=[]),
+        html.Div(id="my_select")
     ]
 )
 
