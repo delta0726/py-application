@@ -78,10 +78,10 @@ app.layout = html.Div(
 
 # 2 コールバックの作成 --------------------------------------------------------
 
-
 # ＜ポイント＞
 # - Inputでpx.scatterのhoverData引数を受け取る
 #   --- 受け取ったデータをjson形式に変換して出力する
+
 
 @app.callback(
     Output("hoverdata-p", "children"),
