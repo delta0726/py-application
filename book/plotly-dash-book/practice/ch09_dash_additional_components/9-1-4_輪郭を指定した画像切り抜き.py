@@ -2,7 +2,7 @@
 # Book        : Pythonインタラクティブデータビジュアライゼーション入門
 # Chapter     : 9 Dashの追加コンポーネント
 # Theme       : 1 DashCanvas
-# Topic       : 1 DashCanvasコンポーネント
+# Topic       : 4 輪郭を指定した画像切り抜き
 # Update Date : 2022/3/27
 # Page        : P190 - P192
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
