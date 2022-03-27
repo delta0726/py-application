@@ -3,7 +3,7 @@
 # Category    : Quick Start
 # Theme       : Build the layout
 # Update Date : 2022/3/28
-# URL         : https://dash-bootstrap-components.opensource.faculty.ai/examples/iris/
+# URL         : https://dash-bootstrap-components.opensource.faculty.ai/docs/quickstart/
 # ******************************************************************************
 
 
