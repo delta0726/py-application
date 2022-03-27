@@ -2,7 +2,7 @@
 # Book        : Pythonインタラクティブデータビジュアライゼーション入門
 # Chapter     : 6 Dashレイアウト
 # Theme       : 1 コンポーネント
-# Topic       : 1 コンポーネントの策k製
+# Topic       : 1 コンポーネントの作成
 # Update Date : 2022/3/20
 # Page        : P106 - P107
 # URL         : https://github.com/plotly-dash-book/plotly-dash-book
