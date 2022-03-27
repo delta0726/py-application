@@ -1,5 +1,5 @@
 # ******************************************************************************
-# Library     : Pythonインタラクティブデータビジュアライゼーション入門
+# Library     : Dash Bootstrap Components
 # Category    : Quick Start
 # Theme       : Build the layout
 # Update Date : 2022/3/28
