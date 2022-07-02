@@ -3,7 +3,7 @@
 # Chapter     : 4 Dash入門
 # Theme       : コールバックの仕組み
 # Creat Date  : 2022/3/13
-# Final Update:
+# Final Update: 2022/7/2
 # URL         : https://www.udemy.com/course/python-dash-plotly/
 # ******************************************************************************
 
@@ -22,10 +22,15 @@
 # ＜目次＞
 # 0 準備
 # 1 ウィジェットの設定
-# 2 アプリの起動
+# 2 コールバックの定義
+# 3 アプリの起動
 
 
 # 0 準備 -----------------------------------------------------------------
+
+# ＜ポイント＞
+# - コールバックではInput/Outputを使う
+
 
 # ライブラリ
 import dash
@@ -33,12 +38,15 @@ import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
 
-
 # インスタンス生成
 app = dash.Dash()
 
 
 # 1 レイアウトの設定 -------------------------------------------------------
+
+# ＜ポイント＞
+# - 入力したテキストをHTML表示する
+
 
 # レイアウト
 # --- Inputで入力した値をDivに出力する
@@ -48,15 +56,23 @@ app.layout = html.Div([
     html.Div(id='output_div_id')
 ])
 
+
+# 2 コールバックの定義 ----------------------------------------------------
+
+# ＜ポイント＞
+# - デコレータを使ってコールバックを記述する
+#   --- input_test_idをデコレータに渡してinput_test_idを受け取る
+
+
 @app.callback(
     Output(component_id='output_div_id', component_property='children'),
-    Input(component_id='input_test_id', component_property= 'value')
+    Input(component_id='input_test_id', component_property='value')
 )
 def update_output_div(input_value):
     return '入力は"{}"です。'.format(input_value)
 
 
-# 2 アプリの起動 ---------------------------------------------------------
+# 3 アプリの起動 ---------------------------------------------------------
 
 if __name__ == '__main__':
     app.run_server()

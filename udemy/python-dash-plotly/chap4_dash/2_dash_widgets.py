@@ -3,7 +3,7 @@
 # Chapter     : 4 Dash入門
 # Theme       : DashのWidgets
 # Creat Date  : 2022/3/13
-# Final Update:
+# Final Update: 2022/7/2
 # URL         : https://www.udemy.com/course/python-dash-plotly/
 # ******************************************************************************
 
@@ -39,16 +39,21 @@ app = dash.Dash()
 
 # 1 ウィジェットの設定 ----------------------------------------------------
 
+# ＜ポイント＞
+# - ウィジェットとはリストボックスなどのアイテムのことをいう
+# - 引数が多くなりがちで見にくくなるので、なるべく要素は変数にしておく
+#   --- 全体の構造が見えにくくなる
+
+
+# アイテム
+widget_item = [{'label': '東京', 'value': 'Tokyo'},
+               {'label': '大阪', 'value': 'Osaka'},
+               {'label': '福岡', 'value': 'Fukuoka'}]
+
 # レイアウト
 app.layout = html.Div(children=[
     html.H2(children='Dropdown'),
-    dcc.Dropdown(
-        options=[
-            {'label': '東京', 'value': 'Tokyo'},
-            {'label': '大阪', 'value': 'Osaka'},
-            {'label': '福岡', 'value': 'Fukuoka'}
-        ]
-    ),
+    dcc.Dropdown(options=widget_item),
 
     html.H2(children='Slider'),
     dcc.Slider(min=0, max=10, step=1),
@@ -58,20 +63,12 @@ app.layout = html.Div(children=[
                  style={'width': '50%'}),
 
     html.H2(children='Check List'),
-    dcc.Checklist(options=[
-        {'label': '東京', 'value': 'Tokyo'},
-        {'label': '大阪', 'value': 'Osaka'},
-        {'label': '福岡', 'value': 'Fukuoka'}
-    ],
-        value=['Tokyo', 'Osaka']),
+    dcc.Checklist(options=widget_item,
+                  value=['Tokyo', 'Osaka']),
 
     html.H2(children='Radio Button'),
-    dcc.RadioItems(options=[
-        {'label': '東京', 'value': 'Tokyo'},
-        {'label': '大阪', 'value': 'Osaka'},
-        {'label': '福岡', 'value': 'Fukuoka'}
-    ],
-        value='Osaka')
+    dcc.RadioItems(options=widget_item,
+                   value='Osaka')
 ])
 
 

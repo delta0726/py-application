@@ -3,7 +3,7 @@
 # Chapter     : 4 Dash入門
 # Theme       : コールバックの仕組み（グラフ更新-2）
 # Creat Date  : 2022/3/13
-# Final Update:
+# Final Update: 2022/7/2
 # URL         : https://www.udemy.com/course/python-dash-plotly/
 # ******************************************************************************
 
@@ -22,7 +22,8 @@
 # ＜目次＞
 # 0 準備
 # 1 ウィジェットの設定
-# 2 アプリの起動
+# 2 コールバックの定義
+# 3 アプリの起動
 
 
 # 0 準備 -----------------------------------------------------------------
@@ -43,7 +44,12 @@ app = dash.Dash()
 
 # 1 レイアウトの設定 -------------------------------------------------------
 
-# アイテム (year)
+# ＜ポイント＞
+# - レイアウトではウィジェットを設置することになるが、引数が多くなりがちで全体の構造が見えにくくなる
+#   --- 引数に与えるアイテムはなるべく予め変数として格納しておく
+
+
+# アイテム（year）
 year_options = []
 for year in df['year'].unique():
     year_options.append({'label': str(year), 'value': year})
@@ -56,15 +62,35 @@ for continent in df['continent'].unique():
 # レイアウト
 # --- Inputで入力した値をDivに出力する
 app.layout = html.Div([
+    # タイトル
     html.H1('コールバック3 - グラフ'),
     dcc.Graph(id='graph', style={'width': '60%'}),
+
+    # インプット
     html.H3('年を選んでください。'),
-    dcc.Dropdown(id='select-year', options=year_options, value=year_options[0]['value'], style={'width': '30%'}),
-    html.H3('大陸を選んでください。'),
-    dcc.Dropdown(id='select-continent', options=continent_options, value=continent_options[0]['value'],
+    dcc.Dropdown(id='select-year',
+                 options=year_options,
+                 value=year_options[0]['value'],
                  style={'width': '30%'}),
+
+    html.H3('大陸を選んでください。'),
+    dcc.Dropdown(id='select-continent',
+                 options=continent_options,
+                 value=continent_options[0]['value'],
+                 style={'width': '30%'}),
+
+    # アウトプット
     html.Div(id='output_div_id')
 ])
+
+
+# 2 コールバックの定義 ----------------------------------------------------
+
+# ＜ポイント＞
+# - デコレータの中では名前空間にある変数(df)を参照することができる
+#   --- デコレータで受け取るのはウィジェットで指定されたパラメータ
+#   --- パラメータをもとにデコレータ内で集計された計算結果を返す（デコレータに大規模なコードは書きたくない）
+#   --- メイン処理を実行する関数を作っておいて、デコレータ内で関数を呼び出して実行
 
 
 @app.callback(
@@ -78,7 +104,7 @@ def update_output_figure(selected_year, selected_continent):
     return figure
 
 
-# 2 アプリの起動---------------------------------------------------------
+# 3 アプリの起動---------------------------------------------------------
 
 if __name__ == '__main__':
     app.run_server()
