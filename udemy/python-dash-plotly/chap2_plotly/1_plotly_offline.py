@@ -3,7 +3,7 @@
 # Chapter     : 2 Plotly
 # Theme       : 基本的なPlotlyグラフ
 # Creat Date  : 2022/3/13
-# Final Update:
+# Final Update: 2022/7/2
 # URL         : https://www.udemy.com/course/python-dash-plotly/
 # ******************************************************************************
 
@@ -11,7 +11,9 @@
 # ＜概要＞
 # - Plotlyの使い方を確認する
 # - PlotlyはJavaScriptベースのオブジェクトのため、パワーポイントなどにも使うことが添付することが可能
-# - PycharmにおけるHTMLチャートの表示手段としてstreamlitを用いる
+# - PycharmでPlotlyが表示できない問題に対処する
+#   --- 2022/7/2: pioの方が本来のshow()メソッドを使えるので適切なのでリタイア
+#      - pio.renderers.default = "browser"
 
 
 # ＜Plotlyの構成＞
@@ -20,9 +22,10 @@
 # 3 layout : スタイル情報
 
 
-# ＜実行：ターミナル＞
-# conda activate python-dash-plotly
-# streamlit run .\chap2_plotly\1_plotly.py
+# ＜実行＞
+# Pycharm自体はPlotlyを表示することができないのでブラウザ表示することで対応する
+# --- ploty.offline.plot()を利用する
+# --- https://zenn.dev/mamamajohn/articles/d02197df7503a4
 
 
 # ＜目次＞
@@ -39,8 +42,8 @@
 
 # ライブラリ
 import plotly.graph_objects as go
-import streamlit as st
 from plotly.subplots import make_subplots
+from plotly import offline
 
 
 # 1 最初のグラフ作成 ------------------------------------------------------
@@ -48,7 +51,7 @@ from plotly.subplots import make_subplots
 # 散布図の作成
 graph_trace = go.Scatter(x=[1, 2, 3], y=[4, 5, 6])
 fig = go.Figure(data=graph_trace)
-st.plotly_chart(fig)
+offline.plot(fig)
 
 
 # 2 traceの設定 ----------------------------------------------------------
@@ -66,7 +69,7 @@ graph_trace = go.Scatter(x=[1, 2, 3], y=[4, 5, 6],
 
 # グラフ表示
 fig = go.Figure(data=graph_trace)
-st.plotly_chart(fig)
+offline.plot(fig)
 
 
 # 3 レイアウトを辞書型で設定 ------------------------------------------------
@@ -95,7 +98,7 @@ graph_layout = go.Layout(width=600, height=500,
 
 # グラフ表示
 fig = go.Figure(data=graph_trace, layout=graph_layout)
-st.plotly_chart(fig)
+offline.plot(fig, output_type="file")
 
 
 # 4 レイアウトを引数で設定 --------------------------------------------------
@@ -123,7 +126,7 @@ graph_layout = go.Layout(
 
 # グラフ表示
 fig = go.Figure(data=graph_trace, layout=graph_layout)
-st.plotly_chart(fig)
+offline.plot(fig)
 
 
 # 5 グラフの重ね書き ---------------------------------------------------------
@@ -144,9 +147,11 @@ add_graph = go.Bar(x=[1, 2, 3], y=[4, 5, 6], name='Bar plot')
 
 # チャート作成
 fig = go.Figure(data=graph_trace)
+offline.plot(fig)
 
 # チャート追加
 fig.add_trace(add_graph)
+offline.plot(fig)
 
 # レイアウト追加
 fig.update_layout(
@@ -157,8 +162,7 @@ fig.update_layout(
     xaxis_range=[0, 4],
     yaxis_range=[2, 8]
 )
-
-st.plotly_chart(fig)
+offline.plot(fig)
 
 
 # 6 複数枚のグラフを描画 ---------------------------------------------------
@@ -179,4 +183,4 @@ fig.add_trace(p3, row=2, col=1)
 fig.add_trace(p4, row=2, col=2)
 
 # 出力
-st.plotly_chart(fig)
+offline.plot(fig)
