@@ -4,7 +4,6 @@
 # Theme       : DataFrameの操作
 # Creat Date  : 2022/07/04
 # Final Update: //
-# URL         : https://mizuhofinancialgroupjp.udemy.com/course/data-analysis_and_dashboard/
 # ******************************************************************************
 
 
